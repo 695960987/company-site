@@ -1,95 +1,124 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>宁波观见文化有限公司</title>
-  <link rel="icon" href="观见 logo.png" type="image/png">
-  <meta name="description" content="宁波观见文化有限公司 | 专注于短视频内容策划、AI图文创作、数字品牌营销。">
-  <meta name="keywords" content="观见文化, 短视频策划, AI图文创作, 品牌设计, 数字营销">
-  <meta name="author" content="宁波观见文化有限公司">
+  <link rel="icon" href="观见 logo.png" type="image/png" />
+  <meta name="description" content="宁波观见文化有限公司｜短视频策划、AI图文创作、数字品牌营销。" />
+  <meta name="keywords" content="观见文化,短视频策划,AI图文,品牌设计,数字营销" />
   <style>
-    body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f6f6f6;
-      color: #333;
+    :root{
+      --brand:#111; --ink:#333; --muted:#777; --paper:#fff; --bg:#f6f6f6;
+      --radius:12px; --shadow:0 6px 18px rgba(0,0,0,.08);
     }
-    header {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Arial,"PingFang SC","Hiragino Sans GB","Microsoft Yahei",sans-serif;background:var(--bg);color:var(--ink)}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    /* 顶部横幅 */
+    header{
+      color:#fff;text-align:center;padding:120px 20px;
+      background:url('meeting.jpg') center/cover no-repeat;
+      position:relative;
     }
-    header img {
-      height: 100px;
-      display: block;
-      margin: 0 auto 20px auto;
+    header::after{
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,.35);
     }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 1px;
-    }
-    header p {
-      font-size: 16px;
-      color: #ccc;
-    }
-    main {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.08);
-    }
-    h2 {
-      border-left: 4px solid #111;
-      padding-left: 10px;
-      color: #111;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #888;
-      font-size: 14px;
-    }
-    a {
-      color: #111;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    .hero{position:relative;z-index:1;max-width:980px;margin:0 auto}
+    .logo{height:90px;display:block;margin:0 auto 16px auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
+    .hero h1{margin:0 0 8px 0;font-size:28px;letter-spacing:.5px}
+    .hero p{margin:0 auto;background:rgba(0,0,0,.35);display:inline-block;padding:6px 12px;border-radius:8px}
+
+    main{max-width:980px;margin:-40px auto 40px auto;padding:0 20px}
+    .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px;margin-bottom:20px}
+    h2{margin:0 0 14px 0;padding-left:10px;border-left:4px solid var(--brand);color:var(--brand);font-size:20px}
+
+    .grid{display:flex;flex-wrap:wrap;gap:18px}
+    .grid .col{flex:1 1 300px}
+    .pill{display:inline-block;background:#eee;border-radius:999px;padding:6px 12px;margin:4px 8px 0 0;font-size:14px}
+
+    .gallery{display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+    .gallery img{width:calc(50% - 9px);border-radius:10px;box-shadow:var(--shadow)}
+    @media (max-width:640px){ .gallery img{width:100%} }
+
+    .video-wrap{position:relative;overflow:hidden;border-radius:10px;box-shadow:var(--shadow)}
+    .video-wrap video{width:100%;height:auto;display:block}
+
+    footer{text-align:center;color:var(--muted);padding:24px}
   </style>
 </head>
 <body>
+  <!-- 顶部横幅（背景用 meeting.jpg） -->
   <header>
-    <img src="观见 logo.png" alt="观见文化 Logo">
-    <h1>宁波观见文化有限公司</h1>
-    <p>数字内容创意 · 品牌视觉 · AI图文策划</p>
+    <div class="hero">
+      <img class="logo" src="观见 logo.png" alt="观见文化 Logo" />
+      <h1>宁波观见文化有限公司</h1>
+      <p>数字内容创意 · 品牌视觉 · AI图文策划</p>
+    </div>
   </header>
 
   <main>
-    <h2>关于我们</h2>
-    <p>宁波观见文化有限公司是一家专注于短视频内容策划、AI图文创作与数字文化创意服务的创新型文化企业。我们将创意与技术结合，为品牌提供高质量的内容生产与传播解决方案。</p>
+    <!-- 关于我们 -->
+    <section class="card">
+      <h2>关于我们</h2>
+      <p>宁波观见文化有限公司是一家专注于短视频内容策划、AI 图文创作与数字文化创意服务的内容公司。我们以“清晰表达 × 高级审美 × 稳健执行”为原则，为品牌与创作者提供从选题到制作到发布的全流程解决方案。</p>
+      <div>
+        <span class="pill">短视频脚本与拍摄</span>
+        <span class="pill">AI 图文与排版</span>
+        <span class="pill">品牌视觉与物料</span>
+        <span class="pill">账号诊断与增长</span>
+      </div>
+    </section>
 
-    <h2>主营业务</h2>
-    <ul>
-      <li>知识类短视频策划与制作</li>
-      <li>品牌视觉内容创作</li>
-      <li>AI图文与数字媒体培训</li>
-      <li>数字营销与传播咨询</li>
-    </ul>
+    <!-- 主营业务（两列） -->
+    <section class="card">
+      <h2>主营业务</h2>
+      <div class="grid">
+        <div class="col">
+          <ul>
+            <li>知识类短视频：策划 / 分镜 / 拍摄 / 后期</li>
+            <li>品牌视觉物料：封面、海报、SOP 模板</li>
+            <li>AI 内容生产：选题结构化、文案增强、图文生成</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>活动与会议录制：多机位拍摄、成片交付</li>
+            <li>账号体检与增长建议：定位、节奏、投放协同</li>
+            <li>培训与共创：团队提效工作坊</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <h2>联系方式</h2>
-    <p>邮箱：<a href="mailto:guanjianstudio@163.com">guanjianstudio@163.com</a></p>
-    <p>地址：宁波市镇海区途安大路69号世纪文创园1号楼219</p>
+    <!-- 图片展示（使用你上传的 5 张图） -->
+    <section class="card">
+      <h2>我们的工作现场</h2>
+      <div class="gallery">
+        <img src="edit.jpg" alt="视频制作" />
+        <img src="shooting.jpg" alt="现场拍摄" />
+        <img src="shooting2.jpg" alt="活动拍摄" />
+        <img src="shooting_place.jpg" alt="棚拍场地" />
+        <img src="meeting.jpg" alt="会议录影" />
+      </div>
+    </section>
+
+    <!-- 可选：办公室短视频做背景/展示（你已上传 studio.mp4） -->
+    <section class="card">
+      <h2>空间与设备</h2>
+      <div class="video-wrap">
+        <video src="studio.mp4" autoplay muted loop playsinline controls></video>
+      </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="card">
+      <h2>联系方式</h2>
+      <p>邮箱：<a href="mailto:guanjianstudio@163.com">guanjianstudio@163.com</a></p>
+      <p>地址：宁波市镇海区途安大路69号世纪文创园1号楼219</p>
+    </section>
   </main>
 
-  <footer>
-    © 2025 宁波观见文化有限公司 | Company Showcase Page
-  </footer>
+  <footer>© 2025 宁波观见文化有限公司 | 版权所有</footer>
 </body>
 </html>
